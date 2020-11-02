@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "GamerRater",
+            "database": "db.sqlite3"
+        }
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.pythonPath": "/home/mswinkels/.local/share/virtualenvs/raterproject--oO2w2Ns/bin/python"
+}
