@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from gamerraterapi.views.game import Games
 from django.conf.urls import include
 from django.urls import path
 from gamerraterapi.views import register_user, login_user
@@ -20,6 +21,10 @@ from gamerraterapi.views import register_user, login_user
 from rest_framework import routers
 
 router = routers.DefaultRouter(trailing_slash=False)
+#(r=patternmatch'what string client is looking for'
+# Class that you are looking for, 
+# 'descriptive name')
+router.register(r'games', Games, 'game')
 
 urlpatterns = [
     path('', include(router.urls)),

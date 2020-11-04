@@ -1,0 +1,44 @@
+[
+    {
+        "model": "gamerraterapi.game",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "title": "Oregon Trail",
+            "description": "All sorts of gruesome deaths await you and the rest of your wagon party in this official multi-player card game version of the classic computer game. To win, you'll need to keep one player alive all the way from Independence, MO to the Willamette Valley.",
+            "designer": "Daryl Andrews",
+            "year_released": 2018,
+            "num_of_players": 6,
+            "est_time": 30,
+            "age_rec": 12
+        }
+    },
+    {
+        "model": "gamerraterapi.game",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "title": "Dune: Imperium",
+            "description": "Dune: Imperium is a game that finds inspiration in elements and characters from the Dune legacy, both the new film from Legendary Pictures and the seminal literary series from Frank Herbert, Brian Herbert, and Kevin J. Anderson.",
+            "designer": "Paul Dennen",
+            "year_released": 2020,
+            "num_of_players": 4,
+            "est_time": 90,
+            "age_rec": 14
+        }
+    },
+    {
+        "model": "gamerraterapi.game",
+        "pk": 3,
+        "fields": {
+            "user": 1,
+            "title": "Scythe",
+            "description": "It is a time of unrest in 1920s Europa. The ashes from the first great war still darken the snow. The capitalistic city-state known simply as “The Factory”, which fueled the war with heavily armored mechs, has closed its doors, drawing the attention of several nearby countries.",
+            "designer": "Jamey Stegmaier",
+            "year_released": 2016,
+            "num_of_players": 4,
+            "est_time": 100,
+            "age_rec": 14
+        }
+    }
+]
