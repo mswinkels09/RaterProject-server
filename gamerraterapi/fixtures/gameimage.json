@@ -1,25 +1,25 @@
 [
     {
-        "model": "gamerraterapi.category",
+        "model": "gamerraterapi.gameimage",
         "pk": 1,
         "fields": {
-            "game_id": 1,
+            "game": 1,
             "image": "https://cf.geekdo-images.com/2fgq_EepBUmGLtLHBFfCjQ__imagepage/img/pUI8Y-O25v__EySvO_rRIHuCDfs=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3120646.jpg"
         }
     },
     {
-        "model": "gamerraterapi.category",
+        "model": "gamerraterapi.gameimage",
         "pk": 2,
         "fields": {
-            "game_id": 2,
+            "game": 2,
             "image": "https://cf.geekdo-images.com/kVNbdF7xYp1iZGGZPBRagg__imagepage/img/8SsbC5LAqI8kN1l9i_8vVg9AHWQ=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5666628.png"
         }
     },
     {
-        "model": "gamerraterapi.category",
+        "model": "gamerraterapi.gameimage",
         "pk": 3,
         "fields": {
-            "game_id": 3,
+            "game": 3,
             "image": "https://cf.geekdo-images.com/Kp7DE6l50Vuu7ah8S2xCCA__imagepage/img/12PasKHV6qpQl2CKHunC9e-z6m8=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3051113.jpg"
         }
     }

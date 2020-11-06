@@ -1,28 +1,28 @@
 [
     {
-        "model": "gamerraterapi.category",
+        "model": "gamerraterapi.gamerating",
         "pk": 1,
         "fields": {
-            "game_id": 1,
-            "user_id": 1,
+            "game": 1,
+            "user": 1,
             "rating": 2
         }
     },
     {
-        "model": "gamerraterapi.category",
+        "model": "gamerraterapi.gamerating",
         "pk": 2,
         "fields": {
-            "game_id": 2,
-            "user_id": 1,
+            "game": 2,
+            "user": 1,
             "rating": 4
         }
     },
     {
-        "model": "gamerraterapi.category",
+        "model": "gamerraterapi.gamerating",
         "pk": 3,
         "fields": {
-            "game_id": 3,
-            "user_id": 1,
+            "game": 3,
+            "user": 1,
             "rating": 4
         }
     }

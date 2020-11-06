@@ -1,28 +1,28 @@
 [
     {
-        "model": "gamerraterapi.category",
+        "model": "gamerraterapi.gamereview",
         "pk": 1,
         "fields": {
-            "game_id": 1,
-            "user_id": 1,
+            "game": 1,
+            "user": 1,
             "review": "Brings back memories"
         }
     },
     {
-        "model": "gamerraterapi.category",
+        "model": "gamerraterapi.gamereview",
         "pk": 2,
         "fields": {
-            "game_id": 2,
-            "user_id": 1,
+            "game": 2,
+            "user": 1,
             "review": "Sounded cool never played"
         }
     },
     {
-        "model": "gamerraterapi.category",
+        "model": "gamerraterapi.gamereview",
         "pk": 3,
         "fields": {
-            "game_id": 3,
-            "user_id": 1,
+            "game": 3,
+            "user": 1,
             "review": "Loved it but was long"
         }
     }

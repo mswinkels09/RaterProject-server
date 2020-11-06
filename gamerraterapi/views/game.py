@@ -1,4 +1,5 @@
 """View module for handling requests about games"""
+from gamerraterapi.models.gamecategory import GameCategory
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.http import HttpResponseServerError
@@ -21,7 +22,7 @@ class Games(ViewSet):
         """
 
         # Uses the token passed in the `Authorization` header
-        user = User.objects.get(user=request.auth.user)
+        # user = User.objects.get(user=request.auth.user)
 
         # Create a new Python instance of the Game class
         # and set its properties from what was sent in the
@@ -34,13 +35,13 @@ class Games(ViewSet):
         game.est_time = request.data["estimatedTime"]
         game.age_rec = request.data["ageRecommendation"]
         game.designer = request.data["designer"]
-        game.user = user
+        game.user = User
 
         # Use the Django ORM to get the record from the database
         # whose `id` is what the client passed as the
         # `gameTypeId` in the body of the request.
-        category = Category.objects.get(pk=request.data["categoryId"])
-        game.category = category
+        # category = Category.objects.get(pk=request.data["categoryId"])
+        # game.category = category
 
         # Try to save the new game to the database, then
         # serialize the game instance as JSON, and send the
@@ -82,7 +83,6 @@ class Games(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
-        user = User.objects.get(user=request.auth.user)
 
         # Do mostly the same thing as POST, but instead of
         # creating a new instance of Game, get the game record
@@ -95,7 +95,6 @@ class Games(ViewSet):
         game.est_time = request.data["estimatedTime"]
         game.age_rec = request.data["ageRecommendation"]
         game.designer = request.data["designer"]
-        game.user = user
 
         category = Category.objects.get(pk=request.data["categoryId"])
         game.category = category
@@ -138,9 +137,9 @@ class Games(ViewSet):
         #    http://localhost:8000/games?type=1
         #
         # That URL will retrieve all tabletop games
-        # category = self.request.query_params.get('categoryId', None)
-        # if category is not None:
-        #     games = games.filter(category__id=type)
+        category = self.request.query_params.get('categoryId', None)
+        if category is not None:
+            games = games.filter(category__id=type)
 
         serializer = GameSerializer(
             games, many=True, context={'request': request})
@@ -150,8 +149,8 @@ class Games(ViewSet):
 class GameCategorySerializer(serializers.ModelSerializer):
     """JSON serializer for event organizer's related Django user"""
     class Meta:
-        model = Category
-        fields = ['lebel', ]
+        model = GameCategory
+        fields = ['id', 'category' ]
 
 ##sends a url with each individual game
 class GameSerializer(serializers.HyperlinkedModelSerializer):
@@ -160,11 +159,10 @@ class GameSerializer(serializers.HyperlinkedModelSerializer):
     Arguments:
         serializer type
     """
-    category = GameCategorySerializer(many=False)
 
     ##Prepare data to be sent as JSON##
     class Meta:
         model = Game
-        fields = ('id', 'url', 'title', 'category', 'num_of_players', 'year_released', 'description', 'designer', 'est_time', 'age_rec')
+        fields = ('id', 'url', 'title', 'num_of_players', 'year_released', 'description', 'designer', 'est_time', 'age_rec')
         #nests the data
         depth = 1
