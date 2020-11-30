@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>LevelUp Reports</title>
+    </head>
+    <body>
+        <h1>Top 5 Games By Rating</h1>
+
+        {% for game in topgames_list %}
+            <ol>
+                <li>
+                    <h2>{{ game.Title }}</h2>
+                    {% comment %} {% for gameRating in game.rating %}
+                    <div>Rating: {{ gameRating.Gamerating }}</div> {% endcomment %}
+                </li>
+            </ol>
+
+            {% comment %} {% endfor %} {% endcomment %}
+        {% endfor %}
+    </body>
+</html>

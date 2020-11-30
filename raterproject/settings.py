@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'gamerraterapi',
+    'gamerraterreports',
 ]
 
 REST_FRAMEWORK = {

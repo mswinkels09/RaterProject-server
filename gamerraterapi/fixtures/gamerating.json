@@ -25,5 +25,23 @@
             "user": 1,
             "rating": 4
         }
+    },
+    {
+        "model": "gamerraterapi.gamerating",
+        "pk": 4,
+        "fields": {
+            "game": 4,
+            "user": 1,
+            "rating": 2
+        }
+    },
+    {
+        "model": "gamerraterapi.gamerating",
+        "pk": 5,
+        "fields": {
+            "game": 5,
+            "user": 1,
+            "rating": 5
+        }
     }
 ]

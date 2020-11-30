@@ -1,4 +1,6 @@
 """View module for handling requests about games"""
+from gamerraterapi.views.category import Categories, CategorySerializer
+from gamerraterapi.models import category
 from gamerraterapi.models.gamecategory import GameCategory
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
@@ -22,7 +24,7 @@ class Games(ViewSet):
         """
 
         # Uses the token passed in the `Authorization` header
-        # user = User.objects.get(user=request.auth.user)
+        user = User.objects.get(user=request.auth.user)
 
         # Create a new Python instance of the Game class
         # and set its properties from what was sent in the
@@ -35,7 +37,7 @@ class Games(ViewSet):
         game.est_time = request.data["estimatedTime"]
         game.age_rec = request.data["ageRecommendation"]
         game.designer = request.data["designer"]
-        game.user = User
+        game.user = user
 
         # Use the Django ORM to get the record from the database
         # whose `id` is what the client passed as the
@@ -137,20 +139,27 @@ class Games(ViewSet):
         #    http://localhost:8000/games?type=1
         #
         # That URL will retrieve all tabletop games
-        category = self.request.query_params.get('categoryId', None)
-        if category is not None:
-            games = games.filter(category__id=type)
+        # categories = self.request.query_params.get('categoryId', None)
+        # if categories is not None:
+        #     games = games.filter(category__id=type)
 
         serializer = GameSerializer(
             games, many=True, context={'request': request})
             ## Response = sends data in parentheses to client in JSON
         return Response(serializer.data)
 
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields=['label', ]
+
 class GameCategorySerializer(serializers.ModelSerializer):
     """JSON serializer for event organizer's related Django user"""
+    category = CategorySerializer(many=False)
+
     class Meta:
         model = GameCategory
-        fields = ['id', 'category' ]
+        fields = ['category', ]
 
 ##sends a url with each individual game
 class GameSerializer(serializers.HyperlinkedModelSerializer):
@@ -159,10 +168,10 @@ class GameSerializer(serializers.HyperlinkedModelSerializer):
     Arguments:
         serializer type
     """
-
+    categories = GameCategorySerializer(many=True)
     ##Prepare data to be sent as JSON##
     class Meta:
         model = Game
-        fields = ('id', 'url', 'title', 'num_of_players', 'year_released', 'description', 'designer', 'est_time', 'age_rec')
+        fields = ('id', 'url', 'categories', 'title', 'num_of_players', 'year_released', 'description', 'designer', 'est_time', 'age_rec')
         #nests the data
         depth = 1

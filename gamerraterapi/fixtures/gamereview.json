@@ -25,5 +25,23 @@
             "user": 1,
             "review": "Loved it but was long"
         }
+    },
+    {
+        "model": "gamerraterapi.gamereview",
+        "pk": 4,
+        "fields": {
+            "game": 4,
+            "user": 1,
+            "review": "Was pretty good"
+        }
+    },
+    {
+        "model": "gamerraterapi.gamereview",
+        "pk": 5,
+        "fields": {
+            "game": 5,
+            "user": 1,
+            "review": "Eh"
+        }
     }
 ]

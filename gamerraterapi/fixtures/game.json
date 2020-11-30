@@ -40,5 +40,33 @@
             "est_time": 100,
             "age_rec": 14
         }
+    },
+    {
+        "model": "gamerraterapi.game",
+        "pk": 4,
+        "fields": {
+            "user": 1,
+            "title": "Sorry",
+            "description": "Yay long description!",
+            "designer": "Cool Guy Joe",
+            "year_released": 2016,
+            "num_of_players": 4,
+            "est_time": 100,
+            "age_rec": 14
+        }
+    },
+    {
+        "model": "gamerraterapi.game",
+        "pk": 5,
+        "fields": {
+            "user": 1,
+            "title": "Clue",
+            "description": "Game where you find clues.",
+            "designer": "Not So Cool Guy Sam",
+            "year_released": 2016,
+            "num_of_players": 4,
+            "est_time": 100,
+            "age_rec": 14
+        }
     }
 ]
