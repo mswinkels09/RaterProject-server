@@ -6,10 +6,10 @@
         <title>LevelUp Reports</title>
     </head>
     <body>
-        <h1>Top 5 Games By Rating</h1>
+        <h1>Bottom 5 Games By Rating</h1>
 
         <ol>
-        {% for game in topgames_list %}
+        {% for game in bottomgames_list %}
                 <li>
                     <h2>{{ game.GameTitle }}</h2>
                     <div>Rating: {{ game.GameRating }}</div>

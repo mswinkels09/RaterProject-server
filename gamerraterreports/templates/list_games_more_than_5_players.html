@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>LevelUp Reports</title>
+    </head>
+    <body>
+        <h1>Games That Can Have More Than 5 Players</h1>
+
+        {% for game in morethan5players_list %}
+                    <h2>{{ game.title }}</h2>
+            <ul>
+                <li>
+                    <div>Number Of Players: {{ game.num_of_players }}</div>
+                </li>
+            </ul>
+        {% endfor %}
+    </body>
+</html>

@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>LevelUp Reports</title>
+    </head>
+    <body>
+        <h1>Games Per Category</h1>
+        {% for category in gamespercategory_list %}
+                    <h2>{{ category.CategoryLabel }}</h2>
+        <ul>
+            <li>
+                    <div>Number Of Games: {{ category.NumOfGames }}</div>
+            </li>
+        </ul>
+        {% endfor %}
+        </ol>
+    </body>
+</html>

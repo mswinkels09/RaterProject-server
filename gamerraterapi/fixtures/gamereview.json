@@ -43,5 +43,14 @@
             "user": 1,
             "review": "Eh"
         }
+    },
+    {
+        "model": "gamerraterapi.gamereview",
+        "pk": 6,
+        "fields": {
+            "game": 1,
+            "user": 1,
+            "review": "Eh"
+        }
     }
 ]

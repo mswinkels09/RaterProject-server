@@ -6,16 +6,15 @@
         <title>LevelUp Reports</title>
     </head>
     <body>
-        <h1>Top 5 Games By Rating</h1>
+        <h1>The Most Reviewed Game</h1>
 
-        <ol>
-        {% for game in topgames_list %}
-                <li>
+        {% for game in mostreviewedgame_list %}
                     <h2>{{ game.GameTitle }}</h2>
-                    <div>Rating: {{ game.GameRating }}</div>
+            <ul>
+                <li>
+                    <div>Number Of Reviews: {{ game.HighestNumReviews }}</div>
                 </li>
-
+            </ul>
         {% endfor %}
-        </ol>
     </body>
 </html>
